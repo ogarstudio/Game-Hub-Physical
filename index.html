@@ -31,13 +31,15 @@
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
+      gap: 20px;
     }
     .game-card {
       background-color: #222;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-      width: 250px;
-      margin: 10px;
+      width: calc(33.333% - 40px); /* 3 per row with spacing */
+      min-width: 250px;
+      max-width: 300px;
       overflow: hidden;
       text-align: center;
     }
@@ -69,6 +71,16 @@
       color: white;
       text-align: center;
       padding: 15px 0;
+    }
+    @media (max-width: 1000px) {
+      .game-card {
+        width: calc(50% - 40px);
+      }
+    }
+    @media (max-width: 600px) {
+      .game-card {
+        width: 100%;
+      }
     }
   </style>
 </head>
